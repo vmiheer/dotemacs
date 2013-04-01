@@ -1,0 +1,6 @@
+* My emacs configs
+  Require modes in *.emacs*. The *.emacs* only contain some /secret/ info.
+* About el-get
+  I use heavily el-get except [[https://github.com/Golevka/emacs-clang-complete-async][clang complete]].
+* License
+  GPLv3
