@@ -10,5 +10,6 @@
 (add-to-list 'load-path "~/.emacs.d/plugins")
 (require 'column-marker)
 (setq show-trailing-whitespace t)
+(setq desktop-dirname "~/.emacs.d/")
 (desktop-save-mode 1)
 (provide 'miheer94f58f020-guiconfig)

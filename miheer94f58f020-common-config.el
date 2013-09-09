@@ -6,6 +6,11 @@
 (ac-flyspell-workaround)
 (add-to-list 'ac-dictionary-directories
              "~/.emacs.d/el-get/auto-complete/ac-dict")
+
+;; auto save minibuffer history
+(savehist-mode 1)
+(setq savehist-additional-variables '(kill-ring search-ring regexp-search-ring))
+
 (ido-mode)
 (server-start)
 (provide 'miheer94f58f020-common-config)
