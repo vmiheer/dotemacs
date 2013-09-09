@@ -11,5 +11,7 @@
 (require 'column-marker)
 (setq show-trailing-whitespace t)
 (setq desktop-dirname "~/.emacs.d/")
+(setq-default show-trailing-whitespace t)
+(show-paren-mode t)
 (desktop-save-mode 1)
 (provide 'miheer94f58f020-guiconfig)
