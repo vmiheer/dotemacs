@@ -11,6 +11,17 @@
 (savehist-mode 1)
 (setq savehist-additional-variables '(kill-ring search-ring regexp-search-ring))
 
-(ido-mode)
+(ido-mode t)
+(global-set-key
+     "\M-x"
+     (lambda ()
+       (interactive)
+       (call-interactively
+        (intern
+         (ido-completing-read
+          "M-x "
+          (all-completions "" obarray 'commandp))))))
+(setq ido-enable-flex-matching t)
+
 (server-start)
 (provide 'miheer94f58f020-common-config)
