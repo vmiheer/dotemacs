@@ -23,5 +23,8 @@
           (all-completions "" obarray 'commandp))))))
 (setq ido-enable-flex-matching t)
 
+;; https://www.masteringemacs.org/article/re-builder-interactive-regexp-builder
+(setq reb-re-syntax 'string)
+
 (server-start)
 (provide 'miheer94f58f020-common-config)

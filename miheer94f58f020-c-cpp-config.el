@@ -12,4 +12,13 @@
   (add-hook 'auto-complete-mode-hook 'ac-common-setup)
   (global-auto-complete-mode t))
 (my-ac-config)
+(c-add-style "llvm.org"
+             '("gnu"
+	       (fill-column . 80)
+	       (c++-indent-level . 2)
+	       (c-basic-offset . 2)
+	       (indent-tabs-mode . nil)
+	       (c-offsets-alist . ((arglist-intro . ++)
+				   (innamespace . 0)
+				   (member-init-intro . ++)))))
 (provide 'miheer94f58f020-c-cpp-config)
