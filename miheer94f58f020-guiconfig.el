@@ -3,18 +3,18 @@
   (when (fboundp mode) (funcall mode -1)))
 ;; Pop up required by AC
 (add-to-list 'load-path "~/.emacs.d/el-get/popup")
-(set-default-font "Ubuntu Mono:antialias=subpixel")
-(set-default-font "Monaco 9")
+; (set-default-font "Ubuntu Mono:antialias=subpixel")
+; (set-default-font "Monaco 9")
 (set-face-attribute 'default nil
-		    :height 110
+		    :height 160
 		    :weight 'normal)
 
 (setq display-time-day-and-date t
       display-time-24hr-format t)
 (display-time)
 (add-to-list 'load-path "~/.emacs.d/plugins")
-(require 'column-marker)
-(column-marker-1 120)
+; (require 'column-marker)
+; (column-marker-1 120)
 (setq show-trailing-whitespace t)
 (setq desktop-dirname "~/.emacs.d/")
 (setq-default show-trailing-whitespace t)
