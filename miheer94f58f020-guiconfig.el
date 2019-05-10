@@ -3,8 +3,11 @@
   (when (fboundp mode) (funcall mode -1)))
 ;; Pop up required by AC
 (add-to-list 'load-path "~/.emacs.d/el-get/popup")
-; (set-default-font "Ubuntu Mono:antialias=subpixel")
-; (set-default-font "Monaco 9")
+(if (display-graphic-p)
+    (progn
+      (set-default-font "Ubuntu Mono:antialias=subpixel")
+      (set-default-font "Monaco 9")))
+
 (set-face-attribute 'default nil
 		    :height 160
 		    :weight 'normal)
@@ -73,5 +76,16 @@
 (add-hook 'org-shiftleft-final-hook 'windmove-left)
 (add-hook 'org-shiftdown-final-hook 'windmove-down)
 (add-hook 'org-shiftright-final-hook 'windmove-right)
+
+;; https://emacs.stackexchange.com/questions/16840/how-to-change-green-background-in-magit-running-in-xterm
+(custom-set-faces
+ ;; other faces
+ '(magit-diff-added ((((type tty)) (:foreground "green"))))
+ '(magit-diff-added-highlight ((((type tty)) (:foreground "LimeGreen"))))
+ '(magit-diff-context-highlight ((((type tty)) (:foreground "default"))))
+ '(magit-diff-file-heading ((((type tty)) nil)))
+ '(magit-diff-removed ((((type tty)) (:foreground "red"))))
+ '(magit-diff-removed-highlight ((((type tty)) (:foreground "IndianRed"))))
+ '(magit-section-highlight ((((type tty)) nil))))
 
 (provide 'miheer94f58f020-guiconfig)

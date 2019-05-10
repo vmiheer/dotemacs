@@ -36,4 +36,11 @@
 ;; (setenv "LD_LIBRARY_PATH"
 ;; 	(concat "~/llvm-6.0/build/lib/:" (getenv "LD_LIBRARY_PATH")))
 
+(add-to-list 'load-path "~/.emacs.d/el-get/emacs-ycmd")
+(require 'ycmd)
+(add-hook 'c++-mode-hook 'ycmd-mode)
+(set-variable 'ycmd-server-command `("python3" ,(file-truename "~/.emacs.d/ycmd/ycmd/")))
+(require 'company-ycmd)
+(company-ycmd-setup)
+
 (provide 'miheer94f58f020-c-cpp-config)
