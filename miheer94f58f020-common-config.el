@@ -26,5 +26,18 @@
 ;; https://www.masteringemacs.org/article/re-builder-interactive-regexp-builder
 (setq reb-re-syntax 'string)
 
+(defun mv/youtube-open (url &rest args)
+  (interactive)
+  (when (string-prefix-p "https://youtu.be/"  url)
+    (async-shell-command
+     (mapconcat 'identity
+		(list "/mnt/c/Program\\ Files/VideoLAN/VLC/vlc.exe" url) " ") nil nil)
+    t)
+  nil)
+
+(setq browse-url-browser-function
+      '(("^https://youtu.be/.*" . mv/youtube-open)
+	("." . browse-url-default-browser)))
+
 (server-start)
 (provide 'miheer94f58f020-common-config)
