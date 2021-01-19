@@ -14,7 +14,19 @@
 
 (el-get 'sync)
 
-(el-get-elpa-build-local-recipes)
+(require 'f)
+;; if it's been more than week since updating melpa databse,
+;; update the database and update the recipies
+(when (<
+	   (* 60 60 24 7)
+	   (-
+	    (float-time)
+	    (float-time
+	     (file-attribute-modification-time
+	      (file-attributes
+	       (f-join user-emacs-directory "elpa/archives/melpa/archive-contents"))))))
+  (package-refresh-contents)
+  (el-get-elpa-build-local-recipes))
 
 (provide 'miheer94f58f020-el-get-config)
 
