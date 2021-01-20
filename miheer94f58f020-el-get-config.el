@@ -15,8 +15,7 @@
 (el-get 'sync)
 
 (setq mv/my-packages
-      '(alert auto-complete ccls cl-lib color-theme color-theme-tomorrow dash el-get f fuzzy ht hydra lsp-mode magit ma\
-	      rkdown-mode org-mime org-mode org-pomodoro package popup s spinner transient with-editor writegood))
+      '(alert auto-complete ccls cl-lib color-theme color-theme-tomorrow dash el-get f fuzzy ht hydra lsp-mode magit markdown-mode org-mime org-mode org-pomodoro package popup s spinner transient virtualenvwrapper with-editor writegood))
 
 (el-get 'sync mv/my-packages)
 
