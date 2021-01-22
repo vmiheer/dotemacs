@@ -1,16 +1,17 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/org-mode-crate/")
 ;; (add-to-list 'load-path "~/.emacs.d/plugins/org-mode-crate/lib/org-mode/lisp/")
 (add-to-list 'load-path "~/git/org-reveal")
-(setq org-directory "~/git/org/")
-(require 'org-mode-crate-init)
+(setq org-directory "~/org/")
+(global-set-key (kbd "<f12>") 'org-agenda)
+(require 'org-mode-crate)
 (require 'org-mime)
-(require 'ox-reveal)
+;; (require 'ox-reveal)
 
 ; Some initial langauges we want org-babel to support
 (org-babel-do-load-languages
  'org-babel-load-languages
  '(
-   (sh . t)
+;   (sh . t)
    (python . t)
    (R . t)
    (ruby . t)
@@ -30,7 +31,8 @@
 	      (local-set-key "\C-c\M-o" 'org-mime-org-buffer-htmlize)
 	      (flyspell-mode t)
 	      (writegood-mode t)
-	      (auto-complete-mode t)
+	      (set-fill-column 80)
+	      (auto-fill-mode t)
 	      )))
 
 (add-hook 'org-mime-html-hook
