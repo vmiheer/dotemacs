@@ -1,0 +1,7 @@
+(setq lsp-keymap-prefix "s-l")
+(add-to-list 'load-path "~/.emacs.d/el-get/lsp-mode/")
+(add-to-list 'load-path "~/.emacs.d/el-get/lsp-mode/clients")
+(require 'lsp-mode)
+(require 'lsp-cmake)
+(add-hook 'cmake-mode-hook #'lsp)
+(provide 'miheer94f58f020-cmake-config)
