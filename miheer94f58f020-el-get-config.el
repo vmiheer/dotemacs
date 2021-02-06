@@ -15,7 +15,7 @@
 (el-get 'sync)
 
 (setq mv/my-packages
-      '(alert auto-complete ccls cl-lib color-theme color-theme-tomorrow dash el-get f fuzzy ht hydra lsp-mode magit markdown-mode org-mime org-mode org-pomodoro package popup s spinner transient virtualenvwrapper with-editor writegood))
+      '(alert auto-complete cl-lib color-theme color-theme-tomorrow dash el-get f fuzzy ht hydra lsp-mode magit markdown-mode org-mime org-mode org-pomodoro package popup s spinner transient virtualenvwrapper with-editor writegood))
 
 (el-get 'sync mv/my-packages)
 
@@ -35,6 +35,10 @@
 	       (f-join user-emacs-directory "elpa/archives/melpa/archive-contents")))))))
   (package-refresh-contents)
   (el-get-elpa-build-local-recipes))
+
+;; we need to wait for some basic packages before those provided by melpa can be installed
+(setq mv/my-packages '(ccls powerline))
+(el-get 'sync mv/my-packages)
 
 (provide 'miheer94f58f020-el-get-config)
 
