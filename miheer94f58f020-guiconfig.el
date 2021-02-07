@@ -5,6 +5,7 @@
 
 (if (display-graphic-p)
     (progn
+      (color-theme-tomorrow-night-eighties)
       (set-frame-font "cascadia mono" nil t)))
 
 (setq display-time-day-and-date t

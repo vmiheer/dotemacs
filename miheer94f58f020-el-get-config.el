@@ -37,7 +37,7 @@
   (el-get-elpa-build-local-recipes))
 
 ;; we need to wait for some basic packages before those provided by melpa can be installed
-(setq mv/my-packages '(ccls powerline))
+(setq mv/my-packages '(ccls powerline yasnippet yasnippet-snippets))
 (el-get 'sync mv/my-packages)
 
 (provide 'miheer94f58f020-el-get-config)

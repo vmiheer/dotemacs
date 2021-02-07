@@ -38,6 +38,7 @@
 (setq browse-url-browser-function
       '(("^https://youtu.be/.*" . mv/youtube-open)
 	("." . browse-url-default-browser)))
+(require 'server)
 (if (not (server-running-p))
     (server-start))
 (provide 'miheer94f58f020-common-config)
