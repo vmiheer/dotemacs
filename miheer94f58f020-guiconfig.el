@@ -3,10 +3,12 @@
 (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
   (when (fboundp mode) (funcall mode -1)))
 
-(if (display-graphic-p)
-    (progn
-      (color-theme-tomorrow-night-eighties)
-      (set-frame-font "cascadia mono" nil t)))
+(add-hook 'after-make-frame-functions
+	  (lambda (frame)
+	    (if (display-graphic-p)
+		(progn
+		  (color-theme-tomorrow-night-eighties)
+		  (set-frame-font "cascadia mono" nil t)))))
 
 (setq display-time-day-and-date t
       display-time-24hr-format t)
