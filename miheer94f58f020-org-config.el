@@ -47,5 +47,9 @@
              "code" (format "font-family: 'Consolas'; font-weight: 400; color: %s; background-color: %s; padding: 0.5em;"
                            "#E6E1DC" "#232323"))))
 
+(require 'flyspell)
+(dolist (mode '(auto-fill-mode company-mode flyspell-mode))
+	(add-hook 'markdown-mode-hook mode))
+
 
 (provide 'miheer94f58f020-org-config)

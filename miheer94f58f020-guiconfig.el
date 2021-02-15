@@ -3,6 +3,8 @@
 (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
   (when (fboundp mode) (funcall mode -1)))
 
+(global-set-key (kbd "C-<return>") 'cua-rectangle-mark-mode)
+
 (add-hook 'after-make-frame-functions
 	  (lambda (frame)
 	    (if (display-graphic-p)
