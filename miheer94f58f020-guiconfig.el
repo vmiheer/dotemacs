@@ -4,6 +4,7 @@
   (when (fboundp mode) (funcall mode -1)))
 
 (global-set-key (kbd "C-<return>") 'cua-rectangle-mark-mode)
+(global-set-key (kbd "C-j") 'cua-rectangle-mark-mode)
 
 (add-hook 'after-make-frame-functions
 	  (lambda (frame)
@@ -22,7 +23,21 @@
 (setq desktop-dirname "~/.emacs.d/")
 (setq-default show-trailing-whitespace t)
 (show-paren-mode t)
-(desktop-save-mode 1)
+(require 'desktop)
+;; (setq desktop-restore-forces-onscreen nil)
+
+;; https://emacs.stackexchange.com/a/61705/6702
+;; Also look at https://emacs.stackexchange.com/questions/32692/daemon-mode-defer-interactive-prompts-on-startup if X is not running
+(if (not (daemonp))
+    (desktop-save-mode 1)
+  (defun restore-desktop (frame)
+    "Restores desktop and cancels hook after first frame opens. 
+     So the daemon can run at startup and it'll still work"
+    (with-selected-frame frame
+      (desktop-save-mode 1)
+      (desktop-read)
+      (remove-hook 'after-make-frame-functions 'restore-desktop)))
+  (add-hook 'after-make-frame-functions 'restore-desktop))
 
 (add-to-list 'load-path (f-join el-get-dir "powerline"))
 (require 'powerline)

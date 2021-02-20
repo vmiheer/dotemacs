@@ -11,7 +11,7 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '(
-;   (sh . t)
+   (shell . t)
    (python . t)
    (R . t)
    (ruby . t)
@@ -29,6 +29,7 @@
           (lambda ()
 	    (progn
 	      (local-set-key "\C-c\M-o" 'org-mime-org-buffer-htmlize)
+	      (local-set-key (kbd "<f5>") 'org-ctrl-c-ctrl-c)
 	      (flyspell-mode t)
 	      (writegood-mode t)
 	      (set-fill-column 80)
