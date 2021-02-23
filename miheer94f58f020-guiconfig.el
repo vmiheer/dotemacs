@@ -8,6 +8,7 @@
 
 (add-hook 'after-make-frame-functions
 	  (lambda (frame)
+	    (select-frame frame)
 	    (if (display-graphic-p)
 		(progn
 		  (color-theme-tomorrow-night-eighties)
